@@ -10,6 +10,7 @@ vim.fn.timer_start(1000, function()
   vim.cmd('echo "' .. string.format('[startup time] %.2f ms', EndTime * 1000) .. '"')
 end)
 
+-- see dp_test.lua:
 vim.fn.timer_start(30, function()
   local content = {}
   local _sta, temp = pcall(vim.fn.readfile, RestartFlagTxt)
@@ -18,7 +19,6 @@ vim.fn.timer_start(30, function()
   else
     content = vim.tbl_filter(function(line) return #line > 0 end, temp)
   end
-  -- see dp_test.lua
   if content[1] == '1' then
     vim.cmd 'SessionsLoad'
   elseif content[1] == '2' then

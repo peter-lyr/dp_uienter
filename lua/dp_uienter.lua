@@ -1,6 +1,5 @@
 -- Copyright (c) 2024 liudepei. All Rights Reserved.
 -- create at 2024/04/22 22:56:03 星期一
-local M = {}
 
 EndTime = vim.fn.reltimefloat(vim.fn.reltime(StartTime))
 
@@ -27,5 +26,3 @@ vim.fn.timer_start(30, function()
   end
   pcall(vim.fn.writefile, {}, RestartFlagTxt)
 end)
-
-return M

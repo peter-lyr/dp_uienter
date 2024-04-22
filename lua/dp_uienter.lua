@@ -7,6 +7,7 @@ vim.fn['GuiWindowFrameless'](1)
 
 vim.fn.timer_start(1000, function()
   vim.fn.writefile({ string.format('[startup time] [%s] %.2f ms', vim.fn.strftime '%Y-%m-%d %H:%M:%S', EndTime * 1000), }, DataSubStartupTxt, 'a')
+  vim.cmd('echo "' .. string.format('[startup time] %.2f ms', EndTime * 1000) .. '"')
 end)
 
 vim.fn.timer_start(30, function()
@@ -17,6 +18,7 @@ vim.fn.timer_start(30, function()
   else
     content = vim.tbl_filter(function(line) return #line > 0 end, temp)
   end
+  -- see dp_test.lua
   if content[1] == '1' then
     vim.cmd 'SessionsLoad'
   elseif content[1] == '2' then

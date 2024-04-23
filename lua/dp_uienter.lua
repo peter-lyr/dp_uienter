@@ -20,7 +20,8 @@ vim.fn.timer_start(30, function()
     content = vim.tbl_filter(function(line) return #line > 0 end, temp)
   end
   if content[1] == '1' then
-    vim.cmd 'SessionsLoad'
+    pcall(vim.cmd, 'Lazy load sessions.nvim')
+    pcall(vim.cmd, 'SessionsLoad')
   elseif content[1] == '2' then
     if content[2] and vim.fn.filereadable(content[2]) == 1 then
       vim.cmd('e ' .. content[2])

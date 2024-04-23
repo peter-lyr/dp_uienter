@@ -1,7 +1,12 @@
 -- Copyright (c) 2024 liudepei. All Rights Reserved.
 -- create at 2024/04/22 22:56:03 星期一
 
-EndTime = vim.fn.reltimefloat(vim.fn.reltime(StartTime))
+EndTime           = vim.fn.reltimefloat(vim.fn.reltime(StartTime))
+
+DataSub           = vim.fn.stdpath 'data' .. '\\DataSub\\'
+
+DataSubStartupTxt = DataSub .. 'startup.txt'
+RestartFlagTxt    = DataSub .. 'restart-flag.txt'
 
 vim.fn['GuiWindowFrameless'](1)
 

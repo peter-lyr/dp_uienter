@@ -7,6 +7,7 @@ DataSub           = vim.fn.stdpath 'data' .. '\\DataSub\\'
 
 DataSubStartupTxt = DataSub .. 'startup.txt'
 RestartFlagTxt    = DataSub .. 'restart-flag.txt'
+RestartReadyTxt   = DataSub .. 'restart-ready.txt'
 
 vim.fn['GuiWindowFrameless'](1)
 

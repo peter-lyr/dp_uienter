@@ -14,6 +14,7 @@ vim.fn['GuiWindowFrameless'](1)
 vim.fn.timer_start(1000, function()
   vim.fn.writefile({ string.format('[startup time] [%s] %.2f ms', vim.fn.strftime '%Y-%m-%d %H:%M:%S', EndTime * 1000), }, DataSubStartupTxt, 'a')
   vim.cmd('echo "' .. string.format('[startup time] %.2f ms', EndTime * 1000) .. '"')
+  vim.cmd 'GuiWindowOpacity 0.9'
 end)
 
 -- see dp_test.lua:
